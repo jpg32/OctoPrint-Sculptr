@@ -14,7 +14,11 @@ import octoprint.plugin
 class SculptrPlugin(octoprint.plugin.SettingsPlugin,
                     octoprint.plugin.AssetPlugin,
                     octoprint.plugin.TemplatePlugin):
-
+def get_template_configs(self):
+    return [
+        dict(type="navbar", custom_bindings=False),
+        dict(type="settings", custom_bindings=False)
+    ]
 	##~~ SettingsPlugin mixin
 
 	def get_settings_defaults(self):
